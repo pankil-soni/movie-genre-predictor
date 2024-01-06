@@ -3,3 +3,6 @@ requests
 pickle5
 pandas
 scikit-learn
+nltk
+string
+re
