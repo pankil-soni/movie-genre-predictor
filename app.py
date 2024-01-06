@@ -2,6 +2,28 @@ import streamlit as st
 import pickle as pkl
 import pandas as pd
 import requests
+import re
+import string
+from nltk.corpus import stopwords
+import nltk
+stopwd = stopwords.words('english')
+def clean_text(text):
+    
+    text= text.lower() # Lowercasing the text
+    text = re.sub('Mail <svaradi@sprynet.com> for translation. ', '', text) # Removing unknown mail
+    text = re.sub('-',' ',text.lower())   # Replacing `x-x` as `x x`
+    text = re.sub(r'@\S+', '', text) # Removing mentions
+    text = re.sub(r'http\S+', '', text) # Removing Links
+    text = re.sub(f'[{string.punctuation}]', '', text) # Remove punctuations
+    text = re.sub(f'[{string.digits}]', '', text) # Remove numbers
+    text = re.sub(r'\s+', ' ', text) # Removing unnecessary spaces
+    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text) # Removing single characters
+    
+    words = nltk.tokenize.word_tokenize(text,language="english", preserve_line=True)
+    text = " ".join([i for i in words if i not in stopwd and len(i)>2]) # Removing the stop words
+
+    return text.strip()
+
 
 # Function to load data
 def load_data(file_name):
@@ -13,6 +35,7 @@ load_dataframe = lambda: load_data('dataframe.pkl')
 load_model = lambda modelname: pkl.load(open(f'{modelname}.pkl', 'rb'))
 load_vectorizer = lambda: load_data('Cvectorizer.pkl')
 load_encoder = lambda: load_data('encoder.pkl')
+
 
 # HTML template for displaying genre predictions
 html_string = '''
@@ -81,9 +104,10 @@ if menu_id == "Search Movie":
             st.error("Failed to load Poster")
 
     # Predict genre on button click
+            
     if st.button('Predict Genre'):
         with st.spinner("Predicting Genre..."):
-            result = load_model(model_codes[model]).predict(load_vectorizer().transform([glbtitle + " " + glbdescription]))
+            result = load_model(model_codes[model]).predict(load_vectorizer().transform([clean_text(glbtitle + " " + glbdescription)]))
             result = load_encoder().inverse_transform(result)[0]
         st.markdown(html_string.format("Predicted", result.strip().title()), unsafe_allow_html=True)
         st.markdown(html_string.format("Actual", actual_genre.strip().title()), unsafe_allow_html=True)
@@ -94,8 +118,9 @@ else:
 
     # Predict genre on button click
     if st.button('Predict Genre'):
-        result = load_model(model_codes[model]).predict(load_vectorizer().transform([str(title) + " " + str(desc)]))
-        result = load_encoder().inverse_transform(result)[0]
+        with st.spinner("Predicting Genre..."):
+            result = load_model(model_codes[model]).predict(load_vectorizer().transform([clean_text(str(title) + " " + str(desc))]))
+            result = load_encoder().inverse_transform(result)[0]
         st.markdown(html_string.format("Predicted", result.strip().title()), unsafe_allow_html=True)
 
 # About the project section
