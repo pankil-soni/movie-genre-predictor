@@ -40,45 +40,66 @@ Movie Genre Predictor is a web application built using Streamlit that predicts t
 
 ### Installation
 
-1. Clone the repository:
+- Clone the repository:
 
-   ```bash
-   git clone https://github.com/pankil-soni/movie-genre-predictor.git
-   cd movie-genre-predictor
+  ```
+  git clone https://github.com/pankil-soni/movie-genre-predictor.git
+  ```
+
+  ```
+  cd movie-genre-predictor
+  ```
+
 ## Install dependencies:
 
-```
-pip install -r requirements.txt --save @github/clipboard-copy-element
-```
-    
-## Usage
-Run the following command to start the Streamlit app:
+- install the requirements
+  ```
+  pip install -r requirements.txt
+  ```
 
-```bash
-Copy code
-streamlit run app.py
-Visit http://localhost:8501 in your web browser to access the application.
-```
+## Usage
+
+- Run the following command to start the Streamlit app:
+
+  ```
+  streamlit run app.py
+  ```
+
 ## Models and Accuracy
 
-- $${\color{red}Logistic Regression}$$: Train Accuracy - **94.69%**, Test Accuracy - **51.59%**
-- $${\color{red}BernoulliNB}$$: Train Accuracy - **91.34%**, Test Accuracy - **52.72%**
-- $${\color{red}MultinomialNB}$$: Train Accuracy - **93.19%**, Test Accuracy - **51.65%**
-- $${\color{red}Random Forest}$$: Train Accuracy - **100%**, Test Accuracy - **48.84%**
-- $${\color{red}Support Vector}$$: Train Accuracy - **99.09%**, Test Accuracy - **48.31%**
+- Logistic Regression :
+  1. Train Accuracy - **94.69%**
+  2. Test Accuracy - **51.59%**
+- BernoulliNB :
+  1. Train Accuracy - **91.34%**
+  2. Test Accuracy - **52.72%**
+- MultinomialNB :
+  1. Train Accuracy - **93.19%**
+  2. Test Accuracy - **51.65%**
+- Random Forest :
+  1. Train Accuracy - **100%**
+  2. st Accuracy - **48.84%**
+- Support Vector :
+  1. Train Accuracy - **99.09%**
+  2. Test Accuracy - **48.31%**
+
 ## Input Options
+
 The application provides two options for input:
 
 1. Search Movie: Choose from pre-existing movie titles with actual genre information.
 2. Manually Enter Title and Description: Enter your own movie title and description for genre prediction.
 
 ## About the Project
+
 This project is a Movie Genre Predictor web application made using Streamlit and deployed on Streamlit Server. The movie data is sourced from IMDB, providing genre information for predictions.
 
 Made by **Pankil Soni**
 
 ## License
+
 This project is licensed under the MIT License.
 
 ## Contact
-For inquiries or feedback, please contact your-pmsoni2016@gmail.com.
+
+For inquiries or feedback, please contact pmsoni2016@gmail.com.
