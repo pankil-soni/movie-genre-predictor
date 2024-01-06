@@ -107,7 +107,7 @@ st.markdown("""
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: black;
     text-align: left;
 }
 .git {
