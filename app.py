@@ -4,9 +4,8 @@ import pandas as pd
 import requests
 import re
 import string
-from nltk.corpus import stopwords
 import nltk
-stopwd = stopwords.words('english')
+stopwd = nltk.corpus.stopwords.words('english')
 def clean_text(text):
     
     text= text.lower() # Lowercasing the text
