@@ -4,4 +4,4 @@ pickle5
 pandas
 scikit-learn
 nltk
-re
+regex
