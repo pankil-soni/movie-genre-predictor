@@ -2,3 +2,4 @@ streamlit
 requests
 pickle5
 pandas
+scikit-learn
