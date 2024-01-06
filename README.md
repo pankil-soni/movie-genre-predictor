@@ -6,7 +6,7 @@
 
 Movie Genre Predictor is a web application built using Streamlit that predicts the genre of a movie based on its title and description. It utilizes machine learning models trained on movie data to provide genre predictions.
 
-##Link to the website : https://movie-genre-predictor-m.streamlit.app/
+## Link to the website : https://movie-genre-predictor-m.streamlit.app/
 
 Data and Models can be downloaded from: https://github.com/pankil-soni/codsoft/tree/master/Genre%20Classification
 
