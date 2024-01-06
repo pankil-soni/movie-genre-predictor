@@ -5,6 +5,7 @@ import requests
 import re
 import string
 import nltk
+nltk.download('stopwords')
 stopwd = nltk.corpus.stopwords.words('english')
 def clean_text(text):
     
