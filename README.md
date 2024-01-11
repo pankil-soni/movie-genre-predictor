@@ -25,8 +25,8 @@ Data and Models can be downloaded from: https://github.com/pankil-soni/codsoft/t
 - [Contact](#contact)
 
 ## Demo
+![ezgif-7-13f70baab3](https://github.com/pankil-soni/movie-genre-predictor/assets/116267467/fe3d25b8-5ea9-4e31-b8ef-c6578f6879ac)
 
-![Demo GIF](https://i.postimg.cc/hvkP7JdQ/2024-01-06-21-17-52.gif)
 
 ## Features
 
