@@ -26,7 +26,7 @@ Data and Models can be downloaded from: https://github.com/pankil-soni/codsoft/t
 
 ## Demo
 
-![Demo GIF](https://im7.ezgif.com/tmp/ezgif-7-13f70baab3.gif)
+![Demo GIF](https://i.postimg.cc/hvkP7JdQ/2024-01-06-21-17-52.gif)
 
 ## Features
 
