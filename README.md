@@ -1,6 +1,6 @@
 # Movie Genre Predictor
 
-![Project Logo]([https://img.icons8.com/?size=100&id=80698&format=png](https://drive.google.com/file/d/1rXHmDrVm7nFQZqnJDvmVHY8Tq17NhGq4/view?usp=sharing))
+![Project Logo](https://img.icons8.com/?size=100&id=80698&format=png)
 
 ## Overview
 
